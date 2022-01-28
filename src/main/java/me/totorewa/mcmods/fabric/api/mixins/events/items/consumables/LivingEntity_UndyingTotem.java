@@ -41,6 +41,8 @@ public abstract class LivingEntity_UndyingTotem extends Entity {
 
     /**
      * Produces an {@link UndyingTotemEvent} to manipulate the totem protection.
+     * @author Totorewa
+     * @reason Allow totem protection to be customised through an event API
      * @param source Source of damage that is attempting to kill the entity
      * @return Death is protected by totem
      */
