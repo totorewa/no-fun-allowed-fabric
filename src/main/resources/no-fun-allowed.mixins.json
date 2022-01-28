@@ -4,6 +4,7 @@
   "package": "me.totorewa.mcmods.nofunallowed.mixins",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
+    "BlockItem_NetherRoof",
     "Villager_Movement"
   ],
   "injectors": {
