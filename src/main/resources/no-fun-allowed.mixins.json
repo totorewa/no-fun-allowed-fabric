@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_16",
   "mixins": [
     "BlockItem_NetherRoof",
+    "Raider_RaidNerf",
     "Villager_Movement"
   ],
   "injectors": {

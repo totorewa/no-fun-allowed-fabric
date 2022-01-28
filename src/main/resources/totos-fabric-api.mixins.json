@@ -4,6 +4,8 @@
   "package": "me.totorewa.mcmods.fabric.api.mixins",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
+    "events.entities.living.raid.JoinRaidEvent",
+    "events.entities.living.villagers.VillagerRestockEvent",
     "events.entities.living.BedBlock_OnUse",
     "events.items.consumables.LivingEntity_UndyingTotem"
   ],
