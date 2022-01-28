@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "no-fun-allowed",
+  "version": "${version}",
+  "name": "No Fun Allowed",
+  "description": "Removes all the fun from Minecraft, leaving only the barest of survival gameplay only the most purist Alpha player could enjoy",
+  "authors": [
+    "Totorewa"
+  ],
+  "contact": {
+    "homepage": "https://totorewa.me/",
+    "sources": "https://github.com/totorewa/no-fun-allowed-fabric"
+  },
+  "license": "LGPL-3.0",
+  "icon": "",
+  "environment": "*",
+  "entrypoints": {},
+  "mixins": [
+    "no-fun-allowed.mixins.json",
+    "totos-fabric-api.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": "1.18.x",
+    "java": ">=17"
+  },
+  "suggests": {
+    "fabric-permissions-api-v0": "*"
+  }
+}
