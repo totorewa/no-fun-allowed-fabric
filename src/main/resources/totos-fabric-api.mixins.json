@@ -4,6 +4,7 @@
   "package": "me.totorewa.mcmods.fabric.api.mixins",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
+    "events.items.consumables.LivingEntity_UndyingTotem"
   ],
   "injectors": {
     "defaultRequire": 1
