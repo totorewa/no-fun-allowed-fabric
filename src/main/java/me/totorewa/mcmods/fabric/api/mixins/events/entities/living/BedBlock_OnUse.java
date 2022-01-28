@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(BedBlock.class)
-public class BedBlock_RequiresRoof {
+public class BedBlock_OnUse {
     @Inject(method = "use", at = @At("HEAD"), cancellable = true)
     private void beforeUse(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand,
                            BlockHitResult blockHit, CallbackInfoReturnable<InteractionResult> cir) {

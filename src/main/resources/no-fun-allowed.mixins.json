@@ -4,6 +4,7 @@
   "package": "me.totorewa.mcmods.nofunallowed.mixins",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
+    "Villager_Movement"
   ],
   "injectors": {
     "defaultRequire": 1
