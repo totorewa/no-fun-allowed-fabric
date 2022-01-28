@@ -45,7 +45,7 @@ public abstract class Villager_Movement extends AbstractVillager implements Vill
 
         int ticks = level.getServer().getTickCount();
         if (ticks >= toto$nextCheckTick) {
-            toto$nextCheckTick += CHECK_MOVEMENT_DELAY;
+            toto$nextCheckTick = ticks + CHECK_MOVEMENT_DELAY;
             final Vec3i lastPos = toto$lastPos;
             toto$lastPos = blockPosition();
             if (!toto$lastPos.equals(lastPos)) {
