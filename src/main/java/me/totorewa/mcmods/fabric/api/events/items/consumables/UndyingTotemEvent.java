@@ -89,6 +89,12 @@ public class UndyingTotemEvent extends AbstractConsumableItemEvent {
         if (clearEffects) clearEffects();
     }
 
+    @Override
+    public void cancel() {
+        super.cancel();
+        kill();
+    }
+
     private void addEffect(MobEffectInstance mobEffect) {
         int id = getEffectId(mobEffect.getEffect());
         effects.put(id, mobEffect);

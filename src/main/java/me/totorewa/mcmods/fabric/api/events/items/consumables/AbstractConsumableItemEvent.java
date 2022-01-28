@@ -10,6 +10,12 @@ public class AbstractConsumableItemEvent extends AbstractItemEvent {
         super(item);
     }
 
+    @Override
+    public void cancel() {
+        super.cancel();
+        consumptionPrevented = true;
+    }
+
     public void preventConsumption() {
         consumptionPrevented = true;
     }

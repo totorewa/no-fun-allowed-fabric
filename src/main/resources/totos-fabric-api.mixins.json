@@ -4,6 +4,7 @@
   "package": "me.totorewa.mcmods.fabric.api.mixins",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
+    "events.entities.living.BedBlock_RequiresRoof",
     "events.items.consumables.LivingEntity_UndyingTotem"
   ],
   "injectors": {
