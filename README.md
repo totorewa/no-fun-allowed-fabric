@@ -32,12 +32,12 @@ to bleed their hard-earned resources dry. I mean, hello?? Geneva?? No more clima
 - [x] Prevent animal breeding if too many animals nearby
 - [x] Prevent villagers restocking if they haven't moved
 - [ ] Reduce crop growth speed if crop farm too big<sup>2</sup>
-- [x] Require bed to have blocks above it to sleep (stop players sleeping night out in the open)
+- [x] Require bed to have blocks above it to sleep
 - [ ] Require light to sleep
 
 <sup>1</sup> Bad omen is only given if the patrol leader isn't in an active raid, but raid farms have the raid spawn far away
-from the raid center, so the patrol leader isn't apart of, or "leaves", the raid, allowing the player to stack up
-on bad omen. This change prevents patrol leader from giving bad omen even after they've left the raid.
+from its center, having the patrol leader "leave" the raid, allowing the player to stack up on bad omen. This change prevents
+patrol leaders from giving bad omen even after they've left the raid.
 
 <sup>2</sup> Not really sure of an elegant way to do this. Advice would be appreciated.
 
