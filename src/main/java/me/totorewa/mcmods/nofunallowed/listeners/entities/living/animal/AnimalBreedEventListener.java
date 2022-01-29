@@ -14,13 +14,14 @@ public class AnimalBreedEventListener implements AnimalBreedEvent.Listener {
         if (NoFunAllowedConfig.animalBreedingDensityLimit > -1) {
             Level level = event.getLevel();
             Animal animal = event.getAnimal();
-            
+
             List<?> entitiesInArea = level.getEntities(animal.getType(),
                     animal.getBoundingBox().inflate(NoFunAllowedConfig.animalBreedingDensityRadius),
                     Entity::isAlive);
 
-            if (entitiesInArea.size() >= NoFunAllowedConfig.animalBreedingDensityLimit)
+            if (entitiesInArea.size() >= NoFunAllowedConfig.animalBreedingDensityLimit) {
                 event.cancel();
+            }
         }
     }
 }

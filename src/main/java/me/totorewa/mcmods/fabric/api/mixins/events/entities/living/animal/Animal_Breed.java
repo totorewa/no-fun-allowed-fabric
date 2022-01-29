@@ -22,7 +22,6 @@ public class Animal_Breed {
                 partner.setAge(6000);
                 parent.resetLove();
                 partner.resetLove();
-                level.broadcastEntityEvent(parent, EntityEvent.VILLAGER_ANGRY);
                 ci.cancel();
             }
         }
