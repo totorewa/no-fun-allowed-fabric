@@ -62,6 +62,8 @@ public abstract class LivingEntity_UndyingTotem extends Entity {
         if (totem == null)
             return false;
 
+        ItemStack inHand = totem;
+
         // If the damage source bypasses the totem effect, create an effect with no effects.
         UndyingTotemEvent event =
                 source.isBypassInvul()
@@ -74,17 +76,17 @@ public abstract class LivingEntity_UndyingTotem extends Entity {
         // Consumption, protection, and effects are separated for added flexibility
         // NFA mod doesn't actually use any of this but I added it anyway. I'm already here, I might as well.
         if (!event.isConsumptionPrevented()) {
-            // Award entity if it is a player (isn't it always in survival??)
-            if (((Object)this) instanceof ServerPlayer) { // yep
-                ServerPlayer player = (ServerPlayer) (Object) this; // yeppers
-                ItemStack inHand = totem.copy(); // This should be synchronous so probably don't need to copy
-                player.awardStat(Stats.ITEM_USED.get(Items.TOTEM_OF_UNDYING));
-                CriteriaTriggers.USED_TOTEM.trigger(player, inHand);
-            }
+            inHand = totem.copy();
             totem.shrink(1);
         }
 
         if (event.willLive()) {
+            // Award entity if it is a player (isn't it always in survival??)
+            if (((Object)this) instanceof ServerPlayer) { // yep
+                ServerPlayer player = (ServerPlayer) (Object) this; // yeppers
+                player.awardStat(Stats.ITEM_USED.get(Items.TOTEM_OF_UNDYING));
+                CriteriaTriggers.USED_TOTEM.trigger(player, inHand);
+            }
             setHealth(1.0f);
             level.broadcastEntityEvent(this, (byte)35); // Play totem effect if it prevented entity from dying
         }
