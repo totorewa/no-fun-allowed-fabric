@@ -25,10 +25,10 @@ public class Raider_RaidNerf implements RaiderRaidHistory {
 
     @Redirect(method = "die", at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/world/entity/monster/PatrollingMonster;isPatrolLeader()Z",
+            target = "Lnet/minecraft/world/entity/raid/Raider;isPatrolLeader()Z",
             ordinal = 1
     ))
-    private boolean disableBadOmenForRaid(PatrollingMonster patroller) {
+    private boolean disableBadOmenForRaid(Raider patroller) {
         return (!NoFunAllowedConfig.nerfRaidFarms || !toto$triedJoiningRaid) && patroller.isPatrolLeader();
     }
 }
