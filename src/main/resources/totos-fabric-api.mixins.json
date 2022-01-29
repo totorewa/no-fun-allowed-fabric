@@ -7,6 +7,7 @@
     "events.entities.living.animal.Animal_Breed",
     "events.entities.living.raid.Raid_Join",
     "events.entities.living.villagers.Villager_OnRestock",
+    "events.entities.living.villagers.Villager_Reputation",
     "events.entities.living.BedBlock_OnUse",
     "events.entities.living.LivingEntity_Die",
     "events.items.consumables.LivingEntity_UndyingTotem"

@@ -5,7 +5,7 @@ import net.fabricmc.fabric.api.event.Event;
 import net.fabricmc.fabric.api.event.EventFactory;
 import net.minecraft.world.entity.npc.Villager;
 
-public class VillagerRestockEvent extends AbstractLivingEntityEvent {
+public class VillagerRestockEvent extends AbstractVillagerEvent {
     private static final Event<VillagerRestockEvent.Listener> listeners =
             EventFactory.createArrayBacked(
                     VillagerRestockEvent.Listener.class,
@@ -18,10 +18,6 @@ public class VillagerRestockEvent extends AbstractLivingEntityEvent {
 
     public VillagerRestockEvent(Villager entity) {
         super(entity);
-    }
-
-    public Villager getVillager() {
-        return (Villager) getEntity();
     }
 
     public static boolean hasListeners() {

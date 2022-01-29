@@ -10,6 +10,8 @@ public final class NoFunAllowedConfig {
     public static boolean nerfRaidFarms = false;
     public static boolean onlyDropXpOnPlayerKill = false;
     public static boolean onlyDropLootOnPlayerKill = false;
+    public static boolean overCuringDamagesReputation = false;
     public static boolean requireRoofToSleep = false;
     public static boolean requireVillagerMovementToRestock = false;
+    public static int zombieCuringLimit = -1;
 }
