@@ -7,6 +7,7 @@ public final class NoFunAllowedConfig {
     public static boolean disableTotemsOfUndying = false;
     public static boolean nerfRaidFarms = false;
     public static boolean onlyDropXpOnPlayerKill = false;
+    public static boolean onlyDropLootOnPlayerKill = false;
     public static boolean requireRoofToSleep = false;
     public static boolean requireVillagerMovementToRestock = false;
 }

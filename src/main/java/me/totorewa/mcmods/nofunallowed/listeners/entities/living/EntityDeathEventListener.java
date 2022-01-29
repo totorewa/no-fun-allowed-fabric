@@ -8,10 +8,14 @@ import net.minecraft.world.entity.player.Player;
 public class EntityDeathEventListener implements EntityDeathEvent.Listener {
     @Override
     public void onDying(EntityDeathEvent event) {
-        if (NoFunAllowedConfig.onlyDropXpOnPlayerKill) {
+        if (NoFunAllowedConfig.onlyDropXpOnPlayerKill || NoFunAllowedConfig.onlyDropLootOnPlayerKill) {
             DamageSource source = event.getDamageSource();
-            if (!(source.getDirectEntity() instanceof Player))
-                event.preventExperienceDrop();
+            if (!(source.getDirectEntity() instanceof Player)) {
+                if (NoFunAllowedConfig.onlyDropLootOnPlayerKill)
+                    event.preventLootDrop();
+                if (NoFunAllowedConfig.onlyDropXpOnPlayerKill)
+                    event.preventExperienceDrop();
+            }
         }
     }
 }
