@@ -6,6 +6,7 @@ public final class NoFunAllowedConfig {
     public static boolean disableBuildingAboveRoof = false;
     public static boolean disableGolemDrops = false;
     public static boolean disableTotemsOfUndying = false;
+    public static int lightLevelRequiredToSleep = 0;
     public static boolean nerfMobFarms = false;
     public static boolean nerfRaidFarms = false;
     public static boolean onlyDropXpOnPlayerKill = false;

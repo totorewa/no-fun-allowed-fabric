@@ -34,7 +34,7 @@ to bleed their hard-earned resources dry. I mean, hello?? Geneva?? No more clima
 - [x] Prevent villagers restocking if they haven't moved
 - [ ] Reduce crop growth speed if crop farm too big<sup>2</sup>
 - [x] Require bed to have blocks above it to sleep
-- [ ] Require light to sleep
+- [x] Require light to sleep
 
 <sup>1</sup> Bad omen is only given if the patrol leader isn't in an active raid, but raid farms have the raid spawn far away
 from its center, having the patrol leader "leave" the raid, allowing the player to stack up on bad omen. This change prevents

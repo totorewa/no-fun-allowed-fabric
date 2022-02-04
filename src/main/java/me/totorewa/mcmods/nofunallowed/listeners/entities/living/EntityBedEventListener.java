@@ -7,6 +7,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.LightLayer;
 
 public class EntityBedEventListener implements EntityBedEvent.Listener {
     @Override
@@ -17,6 +18,14 @@ public class EntityBedEventListener implements EntityBedEvent.Listener {
             if (event.isPlayer()) {
                 Player player = event.getPlayer();
                 player.displayClientMessage(new TextComponent("You may not rest now; bed has no roof"), true);
+            }
+            event.cancel();
+        } else if (NoFunAllowedConfig.lightLevelRequiredToSleep > 0
+                && event.getEntity().getLevel().getBrightness(LightLayer.BLOCK, event.getTargetPos())
+                < NoFunAllowedConfig.lightLevelRequiredToSleep) {
+            if (event.isPlayer()) {
+                Player player = event.getPlayer();
+                player.displayClientMessage(new TextComponent("You may not rest now; it is too dark"), true);
             }
             event.cancel();
         }
