@@ -25,9 +25,9 @@ to bleed their hard-earned resources dry. I mean, hello?? Geneva?? No more clima
 - [x] Limit zombie villager curing discounts
 - [x] Mobs only drop XP/loot if killed by player
 - [ ] Mobs only drop XP if killed in the wild<sup>2</sup>
-- [ ] No bedrock breaking
+- [x] No bedrock breaking
 - [x] No building above nether roof
-- [ ] No TNT duping
+- [x] No TNT duping
 - [ ] No gravity block duping
 - [x] Overcuring villagers damages player reputation
 - [x] Prevent animal breeding if too many animals nearby

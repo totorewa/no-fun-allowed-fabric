@@ -6,6 +6,9 @@
   "mixins": [
     "BlockItem_NetherRoof",
     "Mob_XpRewardAccessor",
+    "PistonBaseBlock_FixDupes",
+    "PistonMovingBlockEntity_BlockStateAccessor",
+    "PistonMovingBlockEntity_FixDupes",
     "Raider_RaidNerf",
     "Villager_Movement"
   ],
