@@ -1,5 +1,6 @@
 package me.totorewa.mcmods.nofunallowed.permissions;
 
+import me.totorewa.mcmods.nofunallowed.NoFunAllowedConfig;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
@@ -8,6 +9,7 @@ public class PermissionChecker {
     private static PermissionChecker INSTANCE;
 
     public boolean check(Entity entity, String permission) {
+        if (!NoFunAllowedConfig.bypassIfOp) return false;
         MinecraftServer server = entity.getLevel().getServer();
         return server != null
                 && entity instanceof ServerPlayer
