@@ -1,13 +1,16 @@
 package me.totorewa.mcmods.fabric.api.events.items.consumables;
 
 import me.totorewa.mcmods.fabric.api.events.items.AbstractItemEvent;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.ItemStack;
 
 public class AbstractConsumableItemEvent extends AbstractItemEvent {
+    private final Entity consumptionEntity;
     private boolean consumptionPrevented;
 
-    public AbstractConsumableItemEvent(ItemStack item) {
+    public AbstractConsumableItemEvent(ItemStack item, final Entity consumptionEntity) {
         super(item);
+        this.consumptionEntity = consumptionEntity;
     }
 
     @Override
@@ -22,5 +25,9 @@ public class AbstractConsumableItemEvent extends AbstractItemEvent {
 
     public boolean isConsumptionPrevented() {
         return consumptionPrevented;
+    }
+
+    public Entity getConsumptionEntity() {
+        return consumptionEntity;
     }
 }

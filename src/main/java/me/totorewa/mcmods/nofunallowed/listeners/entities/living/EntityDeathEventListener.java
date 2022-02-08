@@ -4,7 +4,9 @@ import me.totorewa.mcmods.fabric.api.events.entities.living.EntityDeathEvent;
 import me.totorewa.mcmods.nofunallowed.NoFunAllowedConfig;
 import me.totorewa.mcmods.nofunallowed.helpers.GlobalExperienceDecay;
 import me.totorewa.mcmods.nofunallowed.mixins.Mob_XpRewardAccessor;
+import me.totorewa.mcmods.nofunallowed.permissions.Permissions;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.monster.Monster;
@@ -35,9 +37,10 @@ public class EntityDeathEventListener implements EntityDeathEvent.Listener {
             }
         }
 
-        if (NoFunAllowedConfig.nerfMobFarms) {
-            int tick = monster.getLevel().getServer().getTickCount();
+        if (NoFunAllowedConfig.nerfMobFarms
+                && !Permissions.BYPASS_MOBFARMNERF.hasPermission(event.getDamageSource().getEntity())) {
             ServerPlayer player = (ServerPlayer) event.getDamageSource().getDirectEntity();
+            int tick = monster.getLevel().getServer().getTickCount();
             Mob_XpRewardAccessor xpReward = ((Mob_XpRewardAccessor) monster);
             xpReward.setXpReward(
                     (int) (xpReward.getXpReward() * experienceDecay.getExperienceModifier(tick, player.getUUID())));

@@ -67,8 +67,8 @@ public abstract class LivingEntity_UndyingTotem extends Entity {
         // If the damage source bypasses the totem effect, create an effect with no effects.
         UndyingTotemEvent event =
                 source.isBypassInvul()
-                        ? UndyingTotemHelper.createIgnoreEvent(totem, source)
-                        : UndyingTotemHelper.createDefaultEvent(totem, source);
+                        ? UndyingTotemHelper.createIgnoreEvent(totem, source, this)
+                        : UndyingTotemHelper.createDefaultEvent(totem, source, this);
 
         // Iterate over event listeners and let them modify the event
         UndyingTotemEvent.beforeTotemUse(event);

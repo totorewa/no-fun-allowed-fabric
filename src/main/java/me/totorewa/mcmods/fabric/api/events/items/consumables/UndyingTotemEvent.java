@@ -8,6 +8,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.Map;
@@ -29,8 +30,9 @@ public class UndyingTotemEvent extends AbstractConsumableItemEvent {
     public UndyingTotemEvent(
             final ItemStack item,
             final DamageSource damageSource,
+            final Entity consumptionEntity,
             final Iterable<MobEffectInstance> effects) {
-        this(item, damageSource);
+        this(item, damageSource, consumptionEntity);
         for (MobEffectInstance effect : effects) {
             addEffect(effect);
         }
@@ -38,8 +40,9 @@ public class UndyingTotemEvent extends AbstractConsumableItemEvent {
 
     public UndyingTotemEvent(
             final ItemStack item,
-            final DamageSource damageSource) {
-        super(item);
+            final DamageSource damageSource,
+            final Entity consumptionEntity) {
+        super(item, consumptionEntity);
         this.damageSource = damageSource;
     }
 

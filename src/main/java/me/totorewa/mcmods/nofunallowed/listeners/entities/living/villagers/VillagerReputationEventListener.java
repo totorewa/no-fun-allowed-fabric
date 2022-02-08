@@ -2,6 +2,7 @@ package me.totorewa.mcmods.nofunallowed.listeners.entities.living.villagers;
 
 import me.totorewa.mcmods.fabric.api.events.entities.living.villagers.VillagerReputationEvent;
 import me.totorewa.mcmods.nofunallowed.NoFunAllowedConfig;
+import me.totorewa.mcmods.nofunallowed.permissions.Permissions;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.ai.gossip.GossipContainer;
@@ -17,7 +18,7 @@ public class VillagerReputationEventListener implements VillagerReputationEvent.
         if (event.getReputationEventType() == ReputationEventType.ZOMBIE_VILLAGER_CURED
                 && NoFunAllowedConfig.zombieCuringLimit >= 0) {
             Entity entity = event.getReputableEntity();
-            if (!(entity instanceof ServerPlayer)) return;
+            if (!(entity instanceof ServerPlayer) || Permissions.BYPASS_CURINGLIMIT.hasPermission(entity)) return;
             ServerPlayer player = (ServerPlayer) entity;
             Villager villager = event.getVillager();
             GossipContainer gossips = villager.getGossips();
@@ -32,7 +33,8 @@ public class VillagerReputationEventListener implements VillagerReputationEvent.
                     gossips.add(player.getUUID(), GossipType.MAJOR_POSITIVE, overflow * -20);
                     gossips.add(player.getUUID(), GossipType.MINOR_POSITIVE, overflow * -25);
                 }
-                if (NoFunAllowedConfig.overCuringDamagesReputation) {
+                if (NoFunAllowedConfig.overCuringDamagesReputation
+                        && !Permissions.BYPASS_OVERCURING.hasPermission(entity)) {
                     if (cures > 0)
                         gossips.add(player.getUUID(), GossipType.MAJOR_POSITIVE, -20);
                     gossips.add(player.getUUID(), GossipType.MINOR_NEGATIVE, 50);

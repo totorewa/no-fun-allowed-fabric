@@ -1,6 +1,8 @@
 package me.totorewa.mcmods.nofunallowed.mixins;
 
 import me.totorewa.mcmods.nofunallowed.NoFunAllowedConfig;
+import me.totorewa.mcmods.nofunallowed.permissions.PermissionChecker;
+import me.totorewa.mcmods.nofunallowed.permissions.Permissions;
 import net.minecraft.ChatFormatting;
 import net.minecraft.Util;
 import net.minecraft.network.chat.ChatType;
@@ -24,7 +26,8 @@ public class BlockItem_NetherRoof {
         if (NoFunAllowedConfig.disableBuildingAboveRoof) {
             Level level = context.getLevel();
             Player player = context.getPlayer();
-            if (player.getAbilities().instabuild) return; // Ignore if creative
+            if (player.getAbilities().instabuild
+                    || Permissions.BYPASS_NETHERROOF.hasPermission(player)) return; // Ignore if creative
             if (level.dimension() == Level.NETHER && context.getClickedPos().getY() > 127) {
                 Component message = new TranslatableComponent("build.tooHigh", 127)
                         .withStyle(ChatFormatting.RED);

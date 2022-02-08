@@ -14,7 +14,7 @@ obsoleting the "mining" part of **MINE**craft. No more throwing those poor, inno
 to bleed their hard-earned resources dry. I mean, hello?? Geneva?? No more climate unfriendly animal farming!
 
 #### TODO
-- [ ] Bypass rules if player has the appropriate permission (using [lucko's permission API](https://github.com/lucko/fabric-permissions-api))
+- [x] Bypass rules if player has the appropriate permission (using [lucko's permission API](https://github.com/lucko/fabric-permissions-api))
 - [ ] Cloned shulkers don't drop shells (or reduce)
 - [ ] Decrease loot if mobs are killed too quickly
 - [x] Decrease XP dropped if mobs are killed too quickly
